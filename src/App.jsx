@@ -14,6 +14,13 @@ const products = [
   { title: 'Garlic', id: 2 },
   { title: 'Apple', id: 3 },
 ];
+let guest = 0;
+
+function Cup() {
+  // Bad: changing a preexisting variable!
+  guest = guest + 1;
+  return <h2>Tea cup for guest #{guest}</h2>;
+}
 
 
 export default function App () {
@@ -28,8 +35,12 @@ export default function App () {
     <>
     <MyImageProfile/>
       <p> HELLO React</p>
+      <Cup />
+      <Cup />
+      <Cup />
       <MyButton  count = { count } handleClick = {handleClick}/>
       <MyButton  count = { count } handleClick = {handleClick}/>
+
       </>
    )
 }
